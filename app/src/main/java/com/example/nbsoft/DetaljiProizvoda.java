@@ -10,30 +10,30 @@ import com.bumptech.glide.Glide;
 
 public class DetaljiProizvoda extends AppCompatActivity {
 
-    private TextView brand;
-    private TextView name;
-    private TextView price;
-    private ImageView image;
+    private TextView brandView;
+    private TextView nameView;
+    private TextView priceView;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalji_proizvoda);
 
-        brand = findViewById(R.id.ime);
-        name = findViewById(R.id.name);
-        price = findViewById(R.id.price);
-        image = findViewById(R.id.image);
+        brandView = findViewById(R.id.brend);
+        nameView = findViewById(R.id.name);
+        priceView = findViewById(R.id.price);
+        imageView = findViewById(R.id.image);
 
-        String ime = getIntent().getStringExtra("Ime");
-        String brend = getIntent().getStringExtra("Brend");
-        String cena = getIntent().getStringExtra("Cena");
-        String slika = getIntent().getStringExtra("Slika");
+        String name = getIntent().getStringExtra("Name");
+        String brand = getIntent().getStringExtra("Brand");
+        String price = getIntent().getStringExtra("Price");
+        String image = getIntent().getStringExtra("Image");
 
-        name.setText(ime);
-        brand.setText(brend);
-        price.setText(cena);
-        Glide.with(this).load(slika).into(image);
+        nameView.setText(name);
+        brandView.setText(brand);
+        priceView.setText(price+" $");
+        Glide.with(this).load(image).into(imageView);
 
 
     }
