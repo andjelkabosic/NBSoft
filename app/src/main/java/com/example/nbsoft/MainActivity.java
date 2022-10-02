@@ -21,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
         animacija.setEnterFadeDuration(5000);
         animacija.setExitFadeDuration(5000);
         animacija.start();
-        /*final Handler handler = new Handler();
+        final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
                 Intent intent = new Intent(MainActivity.this, ListaProizvoda.class);
                 MainActivity.this.startActivity(intent);
                 MainActivity.this.finish();
             }
-        }, DELAY_MILLIS);*/
+        }, DELAY_MILLIS);
     }
 }
