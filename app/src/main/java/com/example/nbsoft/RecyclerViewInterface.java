@@ -1,5 +1,5 @@
 package com.example.nbsoft;
 
-interface RecyclerViewInterfejs {
+interface RecyclerViewInterface {
     public void onClickProizvod(int position);
 }

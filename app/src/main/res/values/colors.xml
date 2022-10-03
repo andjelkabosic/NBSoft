@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     
-    <color name="plavo">#5567CD</color>
-    <color name="bela">#EAEFEF</color>
-    <color name="siva">#898B8F</color>
+    <color name="bule">#5567CD</color>
+    <color name="white">#EAEFEF</color>
+    <color name="grey">#898B8F</color>
 </resources>

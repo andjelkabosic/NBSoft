@@ -15,17 +15,17 @@ import java.net.URL;
 import java.util.ArrayList;
 
 
-public class ListaProizvoda extends AppCompatActivity implements RecyclerViewInterfejs{
+public class ProductList extends AppCompatActivity implements RecyclerViewInterface {
     private RecyclerView proizvodi;
     LinearLayoutManager lm;
-    private ArrayList<Proizvod> test;
+    private ArrayList<Product> test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_proizvoda);
+        setContentView(R.layout.activity_product_list);
 
-        proizvodi = findViewById(R.id.proizvodi);
+        proizvodi = findViewById(R.id.products);
         lm = new LinearLayoutManager(this);
         proizvodi.setLayoutManager(lm);
 
@@ -35,7 +35,7 @@ public class ListaProizvoda extends AppCompatActivity implements RecyclerViewInt
 
    @Override
     public void onClickProizvod(int position) {
-      Intent intent = new Intent(ListaProizvoda.this, DetaljiProizvoda.class);
+      Intent intent = new Intent(ProductList.this, ProductDetails.class);
 
        intent.putExtra("Name",test.get(position).getName());
        intent.putExtra("Brand",test.get(position).getBrand());
@@ -44,10 +44,10 @@ public class ListaProizvoda extends AppCompatActivity implements RecyclerViewInt
        startActivity(intent);
     }
 
-    public class ProizvodAPI extends AsyncTask<Object, Integer, ArrayList<Proizvod>> {
+    public class ProizvodAPI extends AsyncTask<Object, Integer, ArrayList<Product>> {
 
         @Override
-        protected ArrayList<Proizvod> doInBackground(Object... obj) {
+        protected ArrayList<Product> doInBackground(Object... obj) {
 
 
             Gson gson = new Gson();
@@ -62,16 +62,16 @@ public class ListaProizvoda extends AppCompatActivity implements RecyclerViewInt
                     String response = bufferedReader.readLine();
                     System.out.println(response);
 
-                    Proizvod[] proizvodi = gson.fromJson(response, Proizvod[].class);
+                    Product[] proizvodi = gson.fromJson(response, Product[].class);
 
-                    ArrayList<Proizvod> arrayListaProizvodi = new ArrayList<Proizvod>();
-                    for (Proizvod proizvod: proizvodi) {
-                        if (proizvod.getBrand() == null || proizvod.getPrice() == null ||
-                            proizvod.getName() == null || proizvod.getImage_link() == null) {
+                    ArrayList<Product> arrayListaProizvodi = new ArrayList<Product>();
+                    for (Product product : proizvodi) {
+                        if (product.getBrand() == null || product.getPrice() == null ||
+                            product.getName() == null || product.getImage_link() == null) {
                             continue;
                         }
-                        System.out.println("Dodajem proizvod" + proizvod);
-                        arrayListaProizvodi.add(proizvod);
+                        System.out.println("Dodajem proizvod" + product);
+                        arrayListaProizvodi.add(product);
                     }
                     return arrayListaProizvodi;
                 }
@@ -82,9 +82,9 @@ public class ListaProizvoda extends AppCompatActivity implements RecyclerViewInt
         }
 
         @Override
-        protected void onPostExecute(ArrayList<Proizvod> lista_proizvoda) {
+        protected void onPostExecute(ArrayList<Product> lista_proizvoda) {
             test = lista_proizvoda;
-            proizvodi.setAdapter(new Adapter(lista_proizvoda,ListaProizvoda.this));
+            proizvodi.setAdapter(new Adapter(lista_proizvoda, ProductList.this));
 
         }
     }

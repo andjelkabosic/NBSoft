@@ -2,13 +2,13 @@ package com.example.nbsoft;
 
 import java.util.Objects;
 
-public class Proizvod {
+public class Product {
     private String brand;
     private String name;
     private String price;
     private String image_link;
 
-    public Proizvod(String brand, String name, String price, String image_link) {
+    public Product(String brand, String name, String price, String image_link) {
         this.brand = brand;
         this.name = name;
         this.price = price;
@@ -61,11 +61,11 @@ public class Proizvod {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Proizvod proizvod = (Proizvod) o;
-        return Objects.equals(brand, proizvod.brand) &&
-                Objects.equals(name, proizvod.name) &&
-                Objects.equals(price, proizvod.price) &&
-                Objects.equals(image_link, proizvod.image_link);
+        Product product = (Product) o;
+        return Objects.equals(brand, product.brand) &&
+                Objects.equals(name, product.name) &&
+                Objects.equals(price, product.price) &&
+                Objects.equals(image_link, product.image_link);
     }
 
     @Override

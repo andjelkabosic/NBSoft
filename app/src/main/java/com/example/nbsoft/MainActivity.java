@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         h.postDelayed(new Runnable(){
             public void run(){
              a.stop();
-            Intent intent = new Intent(MainActivity.this, ListaProizvoda.class);
+            Intent intent = new Intent(MainActivity.this, ProductList.class);
             MainActivity.this.startActivity(intent);
             MainActivity.this.finish();
             }
@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ConstraintLayout layout = findViewById(R.id.main);
-        AnimationDrawable animacija = (AnimationDrawable) layout.getBackground();
-        animacija.setEnterFadeDuration(DELAY_MILLIS);
-        animacija.setExitFadeDuration(DELAY_MILLIS);
-        animacija.start();
-        stopAnimation(animacija, DELAY_MILLIS);
+        AnimationDrawable animation = (AnimationDrawable) layout.getBackground();
+        animation.setEnterFadeDuration(DELAY_MILLIS);
+        animation.setExitFadeDuration(DELAY_MILLIS);
+        animation.start();
+        stopAnimation(animation, DELAY_MILLIS);
     }
 }

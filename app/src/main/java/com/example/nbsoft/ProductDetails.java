@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-public class DetaljiProizvoda extends AppCompatActivity {
+public class ProductDetails extends AppCompatActivity {
 
     private TextView brandView;
     private TextView nameView;
@@ -18,9 +18,9 @@ public class DetaljiProizvoda extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detalji_proizvoda);
+        setContentView(R.layout.activity_product_details);
 
-        brandView = findViewById(R.id.brend);
+        brandView = findViewById(R.id.brand);
         nameView = findViewById(R.id.name);
         priceView = findViewById(R.id.price);
         imageView = findViewById(R.id.image);

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaProizvoda">
+    tools:context=".ProductList">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/proizvodi"
+        android:id="@+id/products"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/gradijent"
+        android:background="@drawable/gradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

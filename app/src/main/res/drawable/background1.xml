@@ -4,8 +4,8 @@
         <shape>
             <gradient
                 android:angle="225"
-                android:startColor="@color/plavo"
-                android:endColor="@color/bela"/>
+                android:startColor="@color/bule"
+                android:endColor="@color/white"/>
         </shape>
     </item>
 </selector>
