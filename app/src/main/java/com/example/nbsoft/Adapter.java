@@ -41,7 +41,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                         int poz = getAdapterPosition();
 
                         if(poz != RecyclerView.NO_POSITION){
-                            recyclerViewInterface.onClickProizvod(poz);
+                            recyclerViewInterface.onClickProduct(poz);
                         }
                     }
                 }

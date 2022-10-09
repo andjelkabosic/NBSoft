@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 
 public class ProductList extends AppCompatActivity implements RecyclerViewInterface {
-    private RecyclerView proizvodi;
+    private RecyclerView products;
     LinearLayoutManager lm;
     private ArrayList<Product> test;
 
@@ -25,16 +25,16 @@ public class ProductList extends AppCompatActivity implements RecyclerViewInterf
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
 
-        proizvodi = findViewById(R.id.products);
+        products = findViewById(R.id.products);
         lm = new LinearLayoutManager(this);
-        proizvodi.setLayoutManager(lm);
+        products.setLayoutManager(lm);
 
-        ProizvodAPI pApi = new ProizvodAPI();
+        ProductAPI pApi = new ProductAPI();
         pApi.execute();
     }
 
    @Override
-    public void onClickProizvod(int position) {
+    public void onClickProduct(int position) {
       Intent intent = new Intent(ProductList.this, ProductDetails.class);
 
        intent.putExtra("Name",test.get(position).getName());
@@ -44,7 +44,7 @@ public class ProductList extends AppCompatActivity implements RecyclerViewInterf
        startActivity(intent);
     }
 
-    public class ProizvodAPI extends AsyncTask<Object, Integer, ArrayList<Product>> {
+    public class ProductAPI extends AsyncTask<Object, Integer, ArrayList<Product>> {
 
         @Override
         protected ArrayList<Product> doInBackground(Object... obj) {
@@ -82,9 +82,9 @@ public class ProductList extends AppCompatActivity implements RecyclerViewInterf
         }
 
         @Override
-        protected void onPostExecute(ArrayList<Product> lista_proizvoda) {
-            test = lista_proizvoda;
-            proizvodi.setAdapter(new Adapter(lista_proizvoda, ProductList.this));
+        protected void onPostExecute(ArrayList<Product> product_list) {
+            test = product_list;
+            products.setAdapter(new Adapter(product_list, ProductList.this));
 
         }
     }
